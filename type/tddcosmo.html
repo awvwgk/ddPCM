@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+   <meta name="description" content="A fast domain decomposition based implementation of the COSMO solvation model.">
+    
+    <meta name="author" content="" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>TddCosmo &ndash; ddCOSMO </title>
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+    
+    <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+    
+    
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <script src="../js/jquery-2.1.3.min.js"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../index.html">ddCOSMO </a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+        
+            <li class="dropdown hidden-xs visible-sm visible-md hidden-lg">
+              <a href="#" class="dropdown-toggle"
+              data-toggle="dropdown" role="button"
+              aria-haspopup="true"
+     aria-expanded="false">Contents <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          
+              
+            <li><a href="../lists/files.html">Source Files</a></li>
+        
+        
+        
+            <li><a href="../lists/modules.html">Modules</a></li>
+        
+            
+                                
+            <li><a href="../lists/procedures.html">Procedures</a></li>
+        
+               
+            <li><a href="../lists/types.html">Derived Types</a></li>
+        
+        
+            </ul>
+            </li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/files.html">Source Files</a></li>
+
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/modules.html">Modules</a></li>
+
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
+
+                             
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
+
+
+          </ul>
+        
+        <form action="../search.html" class="navbar-form navbar-right" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+        </div>
+<!--
+        <button type="submit" class="btn btn-default">Submit</button>
+-->
+        </form>
+        
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+    
+  
+  <div class="row">
+    <h1>TddCosmo
+    <small>Derived Type</small>
+    
+    </h1>
+    
+<div class="row">
+  <div class="col-lg-12">
+<div class="well well-sm">
+  <ul class="list-inline" style="margin-bottom:0px;display:inline">
+     
+     
+     
+     
+    
+    
+     <li><i class="fa fa-list-ol"></i>
+       <a data-toggle="tooltip"
+    data-placement="bottom" data-html="true"
+    title="<p>100.0% of total for derived types.</p>Including implementation: 19 statements, 100.0% of total for derived types.">19 statements</a>
+     </li> 
+     
+     
+     
+    <li><i class="fa fa-code"></i><a href="../src/ddcosmo.f90"> Source File</a></li>
+     
+     
+  </ul>
+  <ol class="breadcrumb in-well text-right">
+  
+    
+     <li><a href='../sourcefile/ddcosmo.f90.html'>ddcosmo.f90</a></li>
+    
+     <li><a href='../module/ddcosmo_core.html'>ddcosmo_core</a></li>
+    
+  
+     <li class="active">TddCosmo</li>
+  </ol>
+</div>
+</div>
+</div>
+<script>
+  $(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+  })
+</script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+    
+<div id="sidebar">
+  
+<h3>Contents</h3>
+ 
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-0">Variables</a></h3></div>
+  <div id="vars-0" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../type/tddcosmo.html#variable-basis">basis</a>
+      
+      <a class="list-group-item" href="../type/tddcosmo.html#variable-ccav">ccav</a>
+      
+      <a class="list-group-item" href="../type/tddcosmo.html#variable-csph">csph</a>
+      
+      <a class="list-group-item" href="../type/tddcosmo.html#variable-eps">eps</a>
+      
+      <a class="list-group-item" href="../type/tddcosmo.html#variable-eta">eta</a>
+      
+      <a class="list-group-item" href="../type/tddcosmo.html#variable-facl">facl</a>
+      
+      <a class="list-group-item" href="../type/tddcosmo.html#variable-facs">facs</a>
+      
+      <a class="list-group-item" href="../type/tddcosmo.html#variable-fact">fact</a>
+      
+      <a class="list-group-item" href="../type/tddcosmo.html#variable-fi">fi</a>
+      
+      <a class="list-group-item" href="../type/tddcosmo.html#variable-grad">grad</a>
+      
+      <a class="list-group-item" href="../type/tddcosmo.html#variable-grid">grid</a>
+      
+      <a class="list-group-item" href="../type/tddcosmo.html#variable-iconv">iconv</a>
+      
+      <a class="list-group-item" href="../type/tddcosmo.html#variable-igrad">igrad</a>
+      
+      <a class="list-group-item" href="../type/tddcosmo.html#variable-inl">inl</a>
+      
+      <a class="list-group-item" href="../type/tddcosmo.html#variable-iprint">iprint</a>
+      
+      <a class="list-group-item" href="../type/tddcosmo.html#variable-lmax">lmax</a>
+      
+      <a class="list-group-item" href="../type/tddcosmo.html#variable-ncav">ncav</a>
+      
+      <a class="list-group-item" href="../type/tddcosmo.html#variable-ngrid">ngrid</a>
+      
+      <a class="list-group-item" href="../type/tddcosmo.html#variable-nl">nl</a>
+      
+      <a class="list-group-item" href="../type/tddcosmo.html#variable-nproc">nproc</a>
+      
+      <a class="list-group-item" href="../type/tddcosmo.html#variable-nsph">nsph</a>
+      
+      <a class="list-group-item" href="../type/tddcosmo.html#variable-nylm">nylm</a>
+      
+      <a class="list-group-item" href="../type/tddcosmo.html#variable-rsph">rsph</a>
+      
+      <a class="list-group-item" href="../type/tddcosmo.html#variable-ui">ui</a>
+      
+      <a class="list-group-item" href="../type/tddcosmo.html#variable-w">w</a>
+      
+      <a class="list-group-item" href="../type/tddcosmo.html#variable-zi">zi</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
+  <div class="list-group">
+    <a class="list-group-item" href="../type/tddcosmo.html#src">TddCosmo</a>
+  </div>
+</div>
+
+
+
+</div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+      <h2>type, public :: TddCosmo</h2>
+    <p>quantities contained in control file</p>
+    
+    
+    
+    <br>
+
+    <section class="visible-xs visible-sm hidden-md">
+      
+<h3>Contents</h3>
+ 
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-1">Variables</a></h3></div>
+  <div id="vars-1" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../type/tddcosmo.html#variable-basis">basis</a>
+      
+      <a class="list-group-item" href="../type/tddcosmo.html#variable-ccav">ccav</a>
+      
+      <a class="list-group-item" href="../type/tddcosmo.html#variable-csph">csph</a>
+      
+      <a class="list-group-item" href="../type/tddcosmo.html#variable-eps">eps</a>
+      
+      <a class="list-group-item" href="../type/tddcosmo.html#variable-eta">eta</a>
+      
+      <a class="list-group-item" href="../type/tddcosmo.html#variable-facl">facl</a>
+      
+      <a class="list-group-item" href="../type/tddcosmo.html#variable-facs">facs</a>
+      
+      <a class="list-group-item" href="../type/tddcosmo.html#variable-fact">fact</a>
+      
+      <a class="list-group-item" href="../type/tddcosmo.html#variable-fi">fi</a>
+      
+      <a class="list-group-item" href="../type/tddcosmo.html#variable-grad">grad</a>
+      
+      <a class="list-group-item" href="../type/tddcosmo.html#variable-grid">grid</a>
+      
+      <a class="list-group-item" href="../type/tddcosmo.html#variable-iconv">iconv</a>
+      
+      <a class="list-group-item" href="../type/tddcosmo.html#variable-igrad">igrad</a>
+      
+      <a class="list-group-item" href="../type/tddcosmo.html#variable-inl">inl</a>
+      
+      <a class="list-group-item" href="../type/tddcosmo.html#variable-iprint">iprint</a>
+      
+      <a class="list-group-item" href="../type/tddcosmo.html#variable-lmax">lmax</a>
+      
+      <a class="list-group-item" href="../type/tddcosmo.html#variable-ncav">ncav</a>
+      
+      <a class="list-group-item" href="../type/tddcosmo.html#variable-ngrid">ngrid</a>
+      
+      <a class="list-group-item" href="../type/tddcosmo.html#variable-nl">nl</a>
+      
+      <a class="list-group-item" href="../type/tddcosmo.html#variable-nproc">nproc</a>
+      
+      <a class="list-group-item" href="../type/tddcosmo.html#variable-nsph">nsph</a>
+      
+      <a class="list-group-item" href="../type/tddcosmo.html#variable-nylm">nylm</a>
+      
+      <a class="list-group-item" href="../type/tddcosmo.html#variable-rsph">rsph</a>
+      
+      <a class="list-group-item" href="../type/tddcosmo.html#variable-ui">ui</a>
+      
+      <a class="list-group-item" href="../type/tddcosmo.html#variable-w">w</a>
+      
+      <a class="list-group-item" href="../type/tddcosmo.html#variable-zi">zi</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
+  <div class="list-group">
+    <a class="list-group-item" href="../type/tddcosmo.html#src">TddCosmo</a>
+  </div>
+</div>
+
+
+
+    </section>
+    <br class="visible-xs visible-sm hidden-md">
+
+    
+    <section>
+    <h2>Components</h2>
+    
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Visibility</th>
+
+<th>Attributes</th><th></th><th>Name</th><th></th><th>Initial</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-basis"></span>real(kind=wp),</td>
+  
+  <td>public,</td>
+  <td>allocatable</td><td>::</td>
+  <td><strong>basis</strong>(:,:)</td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-ccav"></span>real(kind=wp),</td>
+  
+  <td>public,</td>
+  <td>allocatable</td><td>::</td>
+  <td><strong>ccav</strong>(:,:)</td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-csph"></span>real(kind=wp),</td>
+  
+  <td>public,</td>
+  <td>allocatable</td><td>::</td>
+  <td><strong>csph</strong>(:,:)</td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-eps"></span>real(kind=wp),</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>eps</strong></td><td></td><td></td><td><p>dielectric constant of the solvent</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-eta"></span>real(kind=wp),</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>eta</strong></td><td></td><td></td><td><p>regularization parameters</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-facl"></span>real(kind=wp),</td>
+  
+  <td>public,</td>
+  <td>allocatable</td><td>::</td>
+  <td><strong>facl</strong>(:)</td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-facs"></span>real(kind=wp),</td>
+  
+  <td>public,</td>
+  <td>allocatable</td><td>::</td>
+  <td><strong>facs</strong>(:)</td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-fact"></span>real(kind=wp),</td>
+  
+  <td>public,</td>
+  <td>allocatable</td><td>::</td>
+  <td><strong>fact</strong>(:)</td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-fi"></span>real(kind=wp),</td>
+  
+  <td>public,</td>
+  <td>allocatable</td><td>::</td>
+  <td><strong>fi</strong>(:,:)</td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-grad"></span>logical,</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>grad</strong></td><td></td><td></td><td><p>workspaces</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-grid"></span>real(kind=wp),</td>
+  
+  <td>public,</td>
+  <td>allocatable</td><td>::</td>
+  <td><strong>grid</strong>(:,:)</td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-iconv"></span>integer,</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>iconv</strong></td><td></td><td></td><td><p>threshold for iterative solver (10^-iconv)</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-igrad"></span>integer,</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>igrad</strong></td><td></td><td></td><td><p>1) compute forces ; 0) do not compute forces</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-inl"></span>integer,</td>
+  
+  <td>public,</td>
+  <td>allocatable</td><td>::</td>
+  <td><strong>inl</strong>(:)</td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-iprint"></span>integer,</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>iprint</strong></td><td></td><td></td><td><p>printing flag</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-lmax"></span>integer,</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>lmax</strong></td><td></td><td></td><td><p>max angular momentum of spherical harmonics basis</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-ncav"></span>integer,</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>ncav</strong></td><td></td><td></td><td><p>number of integration points on cavity&rsquo;s boundary</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-ngrid"></span>integer,</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>ngrid</strong></td><td></td><td></td><td><p>desired number of Lebedev integration points</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-nl"></span>integer,</td>
+  
+  <td>public,</td>
+  <td>allocatable</td><td>::</td>
+  <td><strong>nl</strong>(:)</td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-nproc"></span>integer,</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>nproc</strong></td><td></td><td></td><td><p>number of openMP threads ; 0) no parallelization</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-nsph"></span>integer,</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>nsph</strong></td><td></td><td></td><td><p>number of spheres/atoms</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-nylm"></span>integer,</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>nylm</strong></td><td></td><td></td><td><p>number of basis functions, i.e., spherical harmonics</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-rsph"></span>real(kind=wp),</td>
+  
+  <td>public,</td>
+  <td>allocatable</td><td>::</td>
+  <td><strong>rsph</strong>(:)</td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-ui"></span>real(kind=wp),</td>
+  
+  <td>public,</td>
+  <td>allocatable</td><td>::</td>
+  <td><strong>ui</strong>(:,:)</td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-w"></span>real(kind=wp),</td>
+  
+  <td>public,</td>
+  <td>allocatable</td><td>::</td>
+  <td><strong>w</strong>(:)</td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-zi"></span>real(kind=wp),</td>
+  
+  <td>public,</td>
+  <td>allocatable</td><td>::</td>
+  <td><strong>zi</strong>(:,:,:)</td><td></td><td></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+    </section>
+    <br>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <section>
+    <h3><span class="anchor" id="src"></span>Source Code</h3>
+    <div class="highlight"><pre><span></span>   <span class="k">type</span> <span class="kd">::</span> <span class="n">TddCosmo</span>
+
+      <span class="c">!&gt; printing flag</span>
+      <span class="kt">integer</span><span class="p">,</span> <span class="k">public</span> <span class="kd">::</span> <span class="n">iprint</span>
+
+      <span class="c">!&gt; number of openMP threads ; 0) no parallelization</span>
+      <span class="kt">integer</span><span class="p">,</span> <span class="k">public</span> <span class="kd">::</span> <span class="n">nproc</span>
+
+      <span class="c">!&gt; max angular momentum of spherical harmonics basis</span>
+      <span class="kt">integer</span><span class="p">,</span> <span class="k">public</span> <span class="kd">::</span> <span class="n">lmax</span>
+
+      <span class="c">!&gt; desired number of Lebedev integration points</span>
+      <span class="kt">integer</span><span class="p">,</span> <span class="k">public</span> <span class="kd">::</span> <span class="n">ngrid</span>
+
+      <span class="c">!&gt; threshold for iterative solver (10^-iconv)</span>
+      <span class="kt">integer</span><span class="p">,</span> <span class="k">public</span> <span class="kd">::</span> <span class="n">iconv</span>
+
+      <span class="c">!&gt; 1) compute forces ; 0) do not compute forces</span>
+      <span class="kt">integer</span><span class="p">,</span> <span class="k">public</span> <span class="kd">::</span> <span class="n">igrad</span>
+
+      <span class="c">!&gt; dielectric constant of the solvent</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span> <span class="k">public</span> <span class="kd">::</span> <span class="n">eps</span>
+
+      <span class="c">!&gt; regularization parameters</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span> <span class="k">public</span> <span class="kd">::</span> <span class="n">eta</span>
+
+      <span class="c">!&gt; number of spheres/atoms</span>
+      <span class="kt">integer</span> <span class="kd">::</span> <span class="n">nsph</span>
+
+      <span class="c">!&gt; number of integration points on cavity&#39;s boundary</span>
+      <span class="kt">integer</span> <span class="kd">::</span> <span class="n">ncav</span>
+
+      <span class="c">!&gt; number of basis functions, i.e., spherical harmonics</span>
+      <span class="kt">integer</span> <span class="kd">::</span> <span class="n">nylm</span>
+
+      <span class="c">!&gt; workspaces</span>
+      <span class="kt">logical</span> <span class="kd">::</span> <span class="n">grad</span>
+      <span class="kt">integer</span><span class="p">,</span> <span class="k">allocatable</span> <span class="kd">::</span> <span class="n">inl</span><span class="p">(:),</span> <span class="n">nl</span><span class="p">(:)</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span> <span class="k">allocatable</span> <span class="kd">::</span> <span class="n">rsph</span><span class="p">(:),</span> <span class="n">csph</span><span class="p">(:,</span> <span class="p">:),</span> <span class="n">ccav</span><span class="p">(:,</span> <span class="p">:)</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span> <span class="k">allocatable</span> <span class="kd">::</span> <span class="n">w</span><span class="p">(:),</span> <span class="n">grid</span><span class="p">(:,</span> <span class="p">:),</span> <span class="n">basis</span><span class="p">(:,</span> <span class="p">:)</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span> <span class="k">allocatable</span> <span class="kd">::</span> <span class="n">fact</span><span class="p">(:),</span> <span class="n">facl</span><span class="p">(:),</span> <span class="n">facs</span><span class="p">(:)</span>
+      <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span> <span class="k">allocatable</span> <span class="kd">::</span> <span class="n">fi</span><span class="p">(:,</span> <span class="p">:),</span> <span class="n">ui</span><span class="p">(:,</span> <span class="p">:),</span> <span class="n">zi</span><span class="p">(:,</span> <span class="p">:,</span> <span class="p">:)</span>
+
+   <span class="k">end type </span><span class="n">TddCosmo</span>
+</pre></div>
+
+    </section>
+    
+    
+    </div>
+  </div>
+
+
+    <hr>    
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+      <div class="row">
+        <div class="col-xs-6 col-md-4"><p>&copy; 2021 
+                                          </p></div>
+        <div class="col-xs-6 col-md-4 col-md-push-4">
+          <p class="text-right">
+            Documentation generated by 
+            <a href="https://github.com/cmacmackin/ford">FORD</a>
+             on 2021-01-29 11:19  
+          </p>
+        </div>
+        <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> ddCOSMO was developed by </p></div>
+      </div>
+      <br>
+      </div> <!-- /container -->    
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+<!--
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+-->
+    <script src="../js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../js/ie10-viewport-bug-workaround.js"></script>
+
+    <!-- MathJax JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+        jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+        extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+      });
+    </script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    
+    <script src="../tipuesearch/tipuesearch_content.js"></script>
+    <script src="../tipuesearch/tipuesearch_set.js"></script>
+    <script src="../tipuesearch/tipuesearch.js"></script>
+    
+    
+  </body>
+</html>

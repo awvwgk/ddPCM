@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+   <meta name="description" content="A fast domain decomposition based implementation of the COSMO solvation model.">
+    
+    <meta name="author" content="" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>
+All Procedures &ndash; ddCOSMO
+</title>
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+    
+    <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+    
+    
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <script src="../js/jquery-2.1.3.min.js"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../index.html">ddCOSMO </a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+        
+            <li class="dropdown hidden-xs visible-sm visible-md hidden-lg">
+              <a href="#" class="dropdown-toggle"
+              data-toggle="dropdown" role="button"
+              aria-haspopup="true"
+     aria-expanded="false">Contents <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          
+              
+            <li><a href="../lists/files.html">Source Files</a></li>
+        
+        
+        
+            <li><a href="../lists/modules.html">Modules</a></li>
+        
+            
+                                
+            <li><a href="../lists/procedures.html">Procedures</a></li>
+        
+               
+            <li><a href="../lists/types.html">Derived Types</a></li>
+        
+        
+            </ul>
+            </li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/files.html">Source Files</a></li>
+
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/modules.html">Modules</a></li>
+
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
+
+                             
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
+
+
+          </ul>
+        
+        <form action="../search.html" class="navbar-form navbar-right" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+        </div>
+<!--
+        <button type="submit" class="btn btn-default">Submit</button>
+-->
+        </form>
+        
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+    
+      <div class="row">
+        <div class="col-lg-12" id='text'>
+			 <h1>Procedures</h1>
+			 <table class="table table-striped">
+			 <thead><tr><th>Procedure</th><th>Location</th><th>Procedure Type</th><th>Description</th></tr></thead>
+			 <tbody>
+			 
+			   <tr><td><a href='../proc/adjrhs.html'>adjrhs</a></td><td><a href='../module/ddcosmo_core.html'>ddcosmo_core</a></td><td>Subroutine</td><td><p>compute</p><a href="../proc/adjrhs.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
+			 
+			   <tr><td><a href='../proc/calcv.html'>calcv</a></td><td><a href='../module/ddcosmo_core.html'>ddcosmo_core</a></td><td>Subroutine</td><td><p>auxiliary routine for COSMO action
+  compute</p><a href="../proc/calcv.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
+			 
+			   <tr><td><a href='../proc/cosmo.html'>cosmo</a></td><td><a href='../sourcefile/cosmo.f90.html'>cosmo.f90</a></td><td>Subroutine</td><td></td></tr>
+			 
+			   <tr><td><a href='../proc/dbasis.html'>dbasis</a></td><td><a href='../module/ddcosmo_core.html'>ddcosmo_core</a></td><td>Subroutine</td><td><p>compute first derivatives of spherical harmonics</p></td></tr>
+			 
+			   <tr><td><a href='../proc/ddinit.html'>ddinit</a></td><td><a href='../module/ddcosmo_core.html'>ddcosmo_core</a></td><td>Subroutine</td><td><p>initialize data structure</p><a href="../proc/ddinit.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
+			 
+			   <tr><td><a href='../proc/ddmkxi.html'>ddmkxi</a></td><td><a href='../module/ddcosmo_core.html'>ddcosmo_core</a></td><td>Subroutine</td><td><p>compute the xi intermediate</p><a href="../proc/ddmkxi.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
+			 
+			   <tr><td><a href='../proc/ddmkzeta.html'>ddmkzeta</a></td><td><a href='../module/ddcosmo_core.html'>ddcosmo_core</a></td><td>Subroutine</td><td><p>compute</p><a href="../proc/ddmkzeta.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
+			 
+			   <tr><td><a href='../proc/dfsw.html'>dfsw</a></td><td><a href='../module/ddcosmo_core.html'>ddcosmo_core</a></td><td>Function</td><td><p>first derivative of switch function</p></td></tr>
+			 
+			   <tr><td><a href='../proc/diis.html'>diis</a></td><td><a href='../sourcefile/jacobi_diis.f90.html'>jacobi_diis.f90</a></td><td>Subroutine</td><td></td></tr>
+			 
+			   <tr><td><a href='../proc/efld.html'>efld</a></td><td><a href='../sourcefile/efld.f90.html'>efld.f90</a></td><td>Subroutine</td><td></td></tr>
+			 
+			   <tr><td><a href='../proc/fdoga.html'>fdoga</a></td><td><a href='../module/ddcosmo_core.html'>ddcosmo_core</a></td><td>Subroutine</td><td><p>compute the U^(x)\Phi contribution to <S, g^(x)></p></td></tr>
+			 
+			   <tr><td><a href='../proc/fdoka.html'>fdoka</a></td><td><a href='../module/ddcosmo_core.html'>ddcosmo_core</a></td><td>Subroutine</td><td><p>compute the first part of <S, L^(x)X></p></td></tr>
+			 
+			   <tr><td><a href='../proc/fdokb.html'>fdokb</a></td><td><a href='../module/ddcosmo_core.html'>ddcosmo_core</a></td><td>Subroutine</td><td><p>compute the the second part of <S, L^(x)X></p></td></tr>
+			 
+			   <tr><td><a href='../proc/forces_dd.html'>forces_dd</a></td><td><a href='../sourcefile/forces_dd.f90.html'>forces_dd.f90</a></td><td>Subroutine</td><td></td></tr>
+			 
+			   <tr><td><a href='../proc/fsw.html'>fsw</a></td><td><a href='../module/ddcosmo_core.html'>ddcosmo_core</a></td><td>Function</td><td><p>switch function (5th degree polynomial)</p></td></tr>
+			 
+			   <tr><td><a href='../proc/gen_oh.html'>gen_oh</a></td><td><a href='../sourcefile/llgnew.f.html'>llgnew.f</a></td><td>Subroutine</td><td></td></tr>
+			 
+			   <tr><td><a href='../proc/gjinv.html'>gjinv</a></td><td><a href='../sourcefile/jacobi_diis.f90.html'>jacobi_diis.f90</a></td><td>Subroutine</td><td></td></tr>
+			 
+			   <tr><td><a href='../proc/header.html'>header</a></td><td><a href='../module/ddcosmo_core.html'>ddcosmo_core</a></td><td>Subroutine</td><td></td></tr>
+			 
+			   <tr><td><a href='../proc/hnorm.html'>hnorm</a></td><td><a href='../sourcefile/matvec.f90.html'>matvec.f90</a></td><td>Function</td><td></td></tr>
+			 
+			   <tr><td><a href='../proc/hsnorm.html'>hsnorm</a></td><td><a href='../module/ddcosmo_core.html'>ddcosmo_core</a></td><td>Subroutine</td><td><p>compute H-norm</p></td></tr>
+			 
+			   <tr><td><a href='../proc/intmlp.html'>intmlp</a></td><td><a href='../module/ddcosmo_core.html'>ddcosmo_core</a></td><td>Function</td><td><p>compute</p><a href="../proc/intmlp.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
+			 
+			   <tr><td><a href='../proc/intrhs.html'>intrhs</a></td><td><a href='../module/ddcosmo_core.html'>ddcosmo_core</a></td><td>Subroutine</td><td><p>integrate against spherical harmonics</p></td></tr>
+			 
+			   <tr><td><a href='../proc/jacobi_diis.html'>jacobi_diis</a></td><td><a href='../sourcefile/jacobi_diis.f90.html'>jacobi_diis.f90</a></td><td>Subroutine</td><td></td></tr>
+			 
+			   <tr><td><a href='../proc/ld0006.html'>LD0006</a></td><td><a href='../sourcefile/llgnew.f.html'>llgnew.f</a></td><td>Subroutine</td><td></td></tr>
+			 
+			   <tr><td><a href='../proc/ld0014.html'>LD0014</a></td><td><a href='../sourcefile/llgnew.f.html'>llgnew.f</a></td><td>Subroutine</td><td></td></tr>
+			 
+			   <tr><td><a href='../proc/ld0026.html'>LD0026</a></td><td><a href='../sourcefile/llgnew.f.html'>llgnew.f</a></td><td>Subroutine</td><td></td></tr>
+			 
+			   <tr><td><a href='../proc/ld0038.html'>LD0038</a></td><td><a href='../sourcefile/llgnew.f.html'>llgnew.f</a></td><td>Subroutine</td><td></td></tr>
+			 
+			   <tr><td><a href='../proc/ld0050.html'>LD0050</a></td><td><a href='../sourcefile/llgnew.f.html'>llgnew.f</a></td><td>Subroutine</td><td></td></tr>
+			 
+			   <tr><td><a href='../proc/ld0074.html'>LD0074</a></td><td><a href='../sourcefile/llgnew.f.html'>llgnew.f</a></td><td>Subroutine</td><td></td></tr>
+			 
+			   <tr><td><a href='../proc/ld0086.html'>LD0086</a></td><td><a href='../sourcefile/llgnew.f.html'>llgnew.f</a></td><td>Subroutine</td><td></td></tr>
+			 
+			   <tr><td><a href='../proc/ld0110.html'>LD0110</a></td><td><a href='../sourcefile/llgnew.f.html'>llgnew.f</a></td><td>Subroutine</td><td></td></tr>
+			 
+			   <tr><td><a href='../proc/ld0146.html'>LD0146</a></td><td><a href='../sourcefile/llgnew.f.html'>llgnew.f</a></td><td>Subroutine</td><td></td></tr>
+			 
+			   <tr><td><a href='../proc/ld0170.html'>LD0170</a></td><td><a href='../sourcefile/llgnew.f.html'>llgnew.f</a></td><td>Subroutine</td><td></td></tr>
+			 
+			   <tr><td><a href='../proc/ld0194.html'>LD0194</a></td><td><a href='../sourcefile/llgnew.f.html'>llgnew.f</a></td><td>Subroutine</td><td></td></tr>
+			 
+			   <tr><td><a href='../proc/ld0230.html'>LD0230</a></td><td><a href='../sourcefile/llgnew.f.html'>llgnew.f</a></td><td>Subroutine</td><td></td></tr>
+			 
+			   <tr><td><a href='../proc/ld0266.html'>LD0266</a></td><td><a href='../sourcefile/llgnew.f.html'>llgnew.f</a></td><td>Subroutine</td><td></td></tr>
+			 
+			   <tr><td><a href='../proc/ld0302.html'>LD0302</a></td><td><a href='../sourcefile/llgnew.f.html'>llgnew.f</a></td><td>Subroutine</td><td></td></tr>
+			 
+			   <tr><td><a href='../proc/ld0350.html'>LD0350</a></td><td><a href='../sourcefile/llgnew.f.html'>llgnew.f</a></td><td>Subroutine</td><td></td></tr>
+			 
+			   <tr><td><a href='../proc/ld0434.html'>LD0434</a></td><td><a href='../sourcefile/llgnew.f.html'>llgnew.f</a></td><td>Subroutine</td><td></td></tr>
+			 
+			   <tr><td><a href='../proc/ld0590.html'>LD0590</a></td><td><a href='../sourcefile/llgnew.f.html'>llgnew.f</a></td><td>Subroutine</td><td></td></tr>
+			 
+			   <tr><td><a href='../proc/ld0770.html'>LD0770</a></td><td><a href='../sourcefile/llgnew.f.html'>llgnew.f</a></td><td>Subroutine</td><td></td></tr>
+			 
+			   <tr><td><a href='../proc/ld0974.html'>LD0974</a></td><td><a href='../sourcefile/llgnew.f.html'>llgnew.f</a></td><td>Subroutine</td><td></td></tr>
+			 
+			   <tr><td><a href='../proc/ld1202.html'>LD1202</a></td><td><a href='../sourcefile/llgnew.f.html'>llgnew.f</a></td><td>Subroutine</td><td></td></tr>
+			 
+			   <tr><td><a href='../proc/ld1454.html'>LD1454</a></td><td><a href='../sourcefile/llgnew.f.html'>llgnew.f</a></td><td>Subroutine</td><td></td></tr>
+			 
+			   <tr><td><a href='../proc/ld1730.html'>LD1730</a></td><td><a href='../sourcefile/llgnew.f.html'>llgnew.f</a></td><td>Subroutine</td><td></td></tr>
+			 
+			   <tr><td><a href='../proc/ld2030.html'>LD2030</a></td><td><a href='../sourcefile/llgnew.f.html'>llgnew.f</a></td><td>Subroutine</td><td></td></tr>
+			 
+			   <tr><td><a href='../proc/ld2354.html'>LD2354</a></td><td><a href='../sourcefile/llgnew.f.html'>llgnew.f</a></td><td>Subroutine</td><td></td></tr>
+			 
+			   <tr><td><a href='../proc/ld2702.html'>LD2702</a></td><td><a href='../sourcefile/llgnew.f.html'>llgnew.f</a></td><td>Subroutine</td><td></td></tr>
+			 
+			   <tr><td><a href='../proc/ld3074.html'>LD3074</a></td><td><a href='../sourcefile/llgnew.f.html'>llgnew.f</a></td><td>Subroutine</td><td></td></tr>
+			 
+			   <tr><td><a href='../proc/ld3470.html'>LD3470</a></td><td><a href='../sourcefile/llgnew.f.html'>llgnew.f</a></td><td>Subroutine</td><td></td></tr>
+			 
+			   <tr><td><a href='../proc/ld3890.html'>LD3890</a></td><td><a href='../sourcefile/llgnew.f.html'>llgnew.f</a></td><td>Subroutine</td><td></td></tr>
+			 
+			   <tr><td><a href='../proc/ld4334.html'>LD4334</a></td><td><a href='../sourcefile/llgnew.f.html'>llgnew.f</a></td><td>Subroutine</td><td></td></tr>
+			 
+			   <tr><td><a href='../proc/ld4802.html'>LD4802</a></td><td><a href='../sourcefile/llgnew.f.html'>llgnew.f</a></td><td>Subroutine</td><td></td></tr>
+			 
+			   <tr><td><a href='../proc/ld5294.html'>LD5294</a></td><td><a href='../sourcefile/llgnew.f.html'>llgnew.f</a></td><td>Subroutine</td><td></td></tr>
+			 
+			   <tr><td><a href='../proc/ld5810.html'>LD5810</a></td><td><a href='../sourcefile/llgnew.f.html'>llgnew.f</a></td><td>Subroutine</td><td></td></tr>
+			 
+			   <tr><td><a href='../proc/ldm1x.html'>ldm1x</a></td><td><a href='../sourcefile/matvec.f90.html'>matvec.f90</a></td><td>Subroutine</td><td><p>given a vector x, apply the inverse diagonal (block) of the L matrix:</p></td></tr>
+			 
+			   <tr><td><a href='../proc/llgrid.html'>llgrid</a></td><td><a href='../sourcefile/llgnew.f.html'>llgnew.f</a></td><td>Subroutine</td><td></td></tr>
+			 
+			   <tr><td><a href='../proc/lstarx.html'>lstarx</a></td><td><a href='../sourcefile/matvec.f90.html'>matvec.f90</a></td><td>Subroutine</td><td></td></tr>
+			 
+			   <tr><td><a href='../proc/lx.html'>lx</a></td><td><a href='../sourcefile/matvec.f90.html'>matvec.f90</a></td><td>Subroutine</td><td></td></tr>
+			 
+			   <tr><td><a href='../proc/makeb.html'>makeb</a></td><td><a href='../sourcefile/jacobi_diis.f90.html'>jacobi_diis.f90</a></td><td>Subroutine</td><td></td></tr>
+			 
+			   <tr><td><a href='../proc/memfree.html'>memfree</a></td><td><a href='../module/ddcosmo_core.html'>ddcosmo_core</a></td><td>Subroutine</td><td><p>free data structure</p></td></tr>
+			 
+			   <tr><td><a href='../proc/mkrhs.html'>mkrhs</a></td><td><a href='../sourcefile/mkrhs.f90.html'>mkrhs.f90</a></td><td>Subroutine</td><td></td></tr>
+			 
+			   <tr><td><a href='../proc/polleg.html'>polleg</a></td><td><a href='../module/ddcosmo_core.html'>ddcosmo_core</a></td><td>Subroutine</td><td><p>compute the l, m associated legendre polynomial for -1 &lt;= x &lt;= 1 using the
+  recurrence formula</p><a href="../proc/polleg.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
+			 
+			   <tr><td><a href='../proc/prtsph.html'>prtsph</a></td><td><a href='../module/ddcosmo_core.html'>ddcosmo_core</a></td><td>Subroutine</td><td><p>dump an array (nylm, ncol) or just a column.</p></td></tr>
+			 
+			   <tr><td><a href='../proc/ptcart.html'>ptcart</a></td><td><a href='../module/ddcosmo_core.html'>ddcosmo_core</a></td><td>Subroutine</td><td><p>dump an array (ngrid, ncol) or just a column.</p></td></tr>
+			 
+			   <tr><td><a href='../proc/rmsvec.html'>rmsvec</a></td><td><a href='../sourcefile/jacobi_diis.f90.html'>jacobi_diis.f90</a></td><td>Subroutine</td><td></td></tr>
+			 
+			   <tr><td><a href='../proc/sprod.html'>sprod</a></td><td><a href='../module/ddcosmo_core.html'>ddcosmo_core</a></td><td>Function</td><td><p>scalar product</p></td></tr>
+			 
+			   <tr><td><a href='../proc/trgev.html'>trgev</a></td><td><a href='../module/ddcosmo_core.html'>ddcosmo_core</a></td><td>Subroutine</td><td><p>service routine for computation of spherical harmonics</p></td></tr>
+			 
+			   <tr><td><a href='../proc/wghpot.html'>wghpot</a></td><td><a href='../module/ddcosmo_core.html'>ddcosmo_core</a></td><td>Subroutine</td><td><p>weigh potential at cavity points by characteristic function &ldquo;ui&rdquo;</p><a href="../proc/wghpot.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
+			 
+			   <tr><td><a href='../proc/ylmbas.html'>ylmbas</a></td><td><a href='../module/ddcosmo_core.html'>ddcosmo_core</a></td><td>Subroutine</td><td><p>compute spherical harmonics</p></td></tr>
+			 
+			 </tbody></table>
+             
+        </div>
+      </div>
+
+    <hr>    
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+      <div class="row">
+        <div class="col-xs-6 col-md-4"><p>&copy; 2021 
+                                          </p></div>
+        <div class="col-xs-6 col-md-4 col-md-push-4">
+          <p class="text-right">
+            Documentation generated by 
+            <a href="https://github.com/cmacmackin/ford">FORD</a>
+             on 2021-01-29 11:19  
+          </p>
+        </div>
+        <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> ddCOSMO was developed by </p></div>
+      </div>
+      <br>
+      </div> <!-- /container -->    
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+<!--
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+-->
+    <script src="../js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../js/ie10-viewport-bug-workaround.js"></script>
+
+    <!-- MathJax JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+        jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+        extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+      });
+    </script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    
+    <script src="../tipuesearch/tipuesearch_content.js"></script>
+    <script src="../tipuesearch/tipuesearch_set.js"></script>
+    <script src="../tipuesearch/tipuesearch.js"></script>
+    
+    
+  </body>
+</html>

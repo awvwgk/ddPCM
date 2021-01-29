@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+   <meta name="description" content="A fast domain decomposition based implementation of the COSMO solvation model.">
+    
+    <meta name="author" content="" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>ddinit &ndash; ddCOSMO</title>
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+    
+    <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+    
+    
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <script src="../js/jquery-2.1.3.min.js"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../index.html">ddCOSMO </a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+        
+            <li class="dropdown hidden-xs visible-sm visible-md hidden-lg">
+              <a href="#" class="dropdown-toggle"
+              data-toggle="dropdown" role="button"
+              aria-haspopup="true"
+     aria-expanded="false">Contents <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          
+              
+            <li><a href="../lists/files.html">Source Files</a></li>
+        
+        
+        
+            <li><a href="../lists/modules.html">Modules</a></li>
+        
+            
+                                
+            <li><a href="../lists/procedures.html">Procedures</a></li>
+        
+               
+            <li><a href="../lists/types.html">Derived Types</a></li>
+        
+        
+            </ul>
+            </li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/files.html">Source Files</a></li>
+
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/modules.html">Modules</a></li>
+
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
+
+                             
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
+
+
+          </ul>
+        
+        <form action="../search.html" class="navbar-form navbar-right" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+        </div>
+<!--
+        <button type="submit" class="btn btn-default">Submit</button>
+-->
+        </form>
+        
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+    
+  
+  <div class="row">
+    <h1>ddinit
+      <small>Subroutine</small>
+    
+    </h1>
+    
+<div class="row">
+  <div class="col-lg-12">
+<div class="well well-sm">
+  <ul class="list-inline" style="margin-bottom:0px;display:inline">
+     
+     
+     
+     
+    
+    
+     <li><i class="fa fa-list-ol"></i>
+       <a data-toggle="tooltip"
+    data-placement="bottom" data-html="true"
+    title=" 2.4% of total for procedures.">163 statements</a>
+     </li> 
+     
+     
+     
+    <li><i class="fa fa-code"></i><a href="../src/ddcosmo.f90"> Source File</a></li>
+     
+     
+  </ul>
+  <ol class="breadcrumb in-well text-right">
+  
+    
+     <li><a href='../sourcefile/ddcosmo.f90.html'>ddcosmo.f90</a></li>
+    
+     <li><a href='../module/ddcosmo_core.html'>ddcosmo_core</a></li>
+    
+  
+     <li class="active">ddinit</li>
+  </ol>
+</div>
+</div>
+</div>
+<script>
+  $(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+  })
+</script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+    
+<div id="sidebar">
+  
+<h3>Contents</h3>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
+  <div class="list-group">
+    <a class="list-group-item" href="../proc/ddinit.html#src">ddinit</a>
+  </div>
+</div>
+
+
+
+</div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+    <h2>
+public subroutine ddinit(self, n, x, y, z, rvdw)
+    
+    
+   
+</h2>
+    
+  
+
+
+    
+    <p>initialize data structure</p>
+<p>allocate the various arrays needed for ddcosmo,
+  assemble the cavity and the various associated geometrical quantities.</p>
+    
+
+    <h3>Arguments</h3>
+    
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-self~5"></span>type(<a href='../type/tddcosmo.html'>TddCosmo</a>),</td>
+  <td>intent(inout)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>self</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-n~13"></span>integer,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>n</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-x~10"></span>real(kind=wp),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>x</strong>(n)</td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-y~6"></span>real(kind=wp),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>y</strong>(n)</td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-z~3"></span>real(kind=wp),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>z</strong>(n)</td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-rvdw"></span>real(kind=wp),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>rvdw</strong>(n)</td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+    
+    
+    
+    
+     
+    <br>
+
+    <section class="visible-xs visible-sm hidden-md">
+      
+<h3>Contents</h3>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
+  <div class="list-group">
+    <a class="list-group-item" href="../proc/ddinit.html#src">ddinit</a>
+  </div>
+</div>
+
+
+
+    </section>
+    <br class="visible-xs visible-sm hidden-md">
+
+    
+
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+
+
+    
+    
+    
+    <section>
+    <h2><span class="anchor" id="src"></span>Source Code</h2>
+    <div class="highlight"><pre><span></span><span class="k">subroutine </span><span class="n">ddinit</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">rvdw</span><span class="p">)</span>
+
+   <span class="k">type</span><span class="p">(</span><span class="n">TddCosmo</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span> <span class="kd">::</span> <span class="n">self</span>
+   <span class="kt">integer</span><span class="p">,</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">n</span>
+   <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">x</span><span class="p">(</span><span class="n">n</span><span class="p">),</span> <span class="n">y</span><span class="p">(</span><span class="n">n</span><span class="p">),</span> <span class="n">z</span><span class="p">(</span><span class="n">n</span><span class="p">),</span> <span class="n">rvdw</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+
+   <span class="kt">integer</span> <span class="kd">::</span> <span class="n">isph</span><span class="p">,</span> <span class="n">jsph</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">ii</span><span class="p">,</span> <span class="n">lnl</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="n">ind</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">igrid</span><span class="p">,</span> <span class="n">inear</span><span class="p">,</span> <span class="n">jnear</span>
+   <span class="kt">integer</span> <span class="kd">::</span> <span class="n">istatus</span>
+   <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span> <span class="kd">::</span> <span class="n">fac</span><span class="p">,</span> <span class="n">fl</span><span class="p">,</span> <span class="n">ffl</span><span class="p">,</span> <span class="n">fnorm</span><span class="p">,</span> <span class="n">d2</span><span class="p">,</span> <span class="n">r2</span><span class="p">,</span> <span class="n">v</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="n">vv</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">xt</span><span class="p">,</span> <span class="n">swthr</span>
+
+   <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span> <span class="k">allocatable</span> <span class="kd">::</span> <span class="n">vcos</span><span class="p">(:),</span> <span class="n">vsin</span><span class="p">(:),</span> <span class="n">vplm</span><span class="p">(:)</span>
+   <span class="kt">integer</span><span class="p">,</span> <span class="k">parameter</span>   <span class="kd">::</span> <span class="n">nllg</span><span class="o">=</span><span class="mi">32</span>
+
+   <span class="kt">integer</span><span class="p">,</span> <span class="k">parameter</span> <span class="kd">::</span> <span class="n">ng0</span><span class="p">(</span><span class="n">nllg</span><span class="p">)</span> <span class="o">=</span> <span class="p">[</span> <span class="p">&amp;</span>
+      <span class="p">&amp;</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">26</span><span class="p">,</span> <span class="mi">38</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">74</span><span class="p">,</span> <span class="mi">86</span><span class="p">,</span> <span class="mi">110</span><span class="p">,</span> <span class="mi">146</span><span class="p">,</span> <span class="mi">170</span><span class="p">,</span> <span class="mi">194</span><span class="p">,</span> <span class="mi">230</span><span class="p">,</span> <span class="mi">266</span><span class="p">,</span> <span class="mi">302</span><span class="p">,</span> <span class="mi">350</span><span class="p">,</span> <span class="mi">434</span><span class="p">,</span> <span class="mi">590</span><span class="p">,</span> <span class="mi">770</span><span class="p">,</span> <span class="mi">974</span><span class="p">,</span> <span class="p">&amp;</span>
+      <span class="p">&amp;</span> <span class="mi">1202</span><span class="p">,</span> <span class="mi">1454</span><span class="p">,</span> <span class="mi">1730</span><span class="p">,</span> <span class="mi">2030</span><span class="p">,</span> <span class="mi">2354</span><span class="p">,</span> <span class="mi">2702</span><span class="p">,</span> <span class="mi">3074</span><span class="p">,</span> <span class="mi">3470</span><span class="p">,</span> <span class="mi">3890</span><span class="p">,</span> <span class="mi">4334</span><span class="p">,</span> <span class="mi">4802</span><span class="p">,</span> <span class="mi">5294</span><span class="p">,</span> <span class="mi">5810</span><span class="p">]</span>
+
+   <span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span> <span class="k">parameter</span> <span class="kd">::</span> <span class="n">f1000</span> <span class="o">=</span> <span class="s2">&quot;(t3, &#39;neighbours of sphere &#39;, i6)&quot;</span>
+   <span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span> <span class="k">parameter</span> <span class="kd">::</span> <span class="n">f1010</span> <span class="o">=</span> <span class="s2">&quot;(t5, 12i6)&quot;</span>
+   <span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span> <span class="k">parameter</span> <span class="kd">::</span> <span class="n">f1100</span> <span class="o">=</span> <span class="s2">&quot;(t3, i8, 3f14.6)&quot;</span>
+
+   <span class="c">! openMP parallelization:</span>
+   <span class="k">if</span> <span class="p">(</span><span class="n">self</span><span class="p">%</span><span class="n">nproc</span><span class="p">.</span><span class="n">eq</span><span class="p">.</span><span class="mi">0</span><span class="p">)</span> <span class="n">self</span><span class="p">%</span><span class="n">nproc</span> <span class="o">=</span> <span class="mi">1</span>
+   <span class="c">!$ call omp_set_num_threads(self%nproc)</span>
+
+   <span class="n">self</span><span class="p">%</span><span class="n">nsph</span> <span class="o">=</span> <span class="n">n</span>
+
+   <span class="c">! choose the lebedev grid with number of points closest to ngrid:</span>
+   <span class="n">igrid</span> <span class="o">=</span> <span class="mi">0</span>
+   <span class="n">inear</span> <span class="o">=</span> <span class="mi">100000</span>
+   <span class="k">do </span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">nllg</span>
+      <span class="n">jnear</span> <span class="o">=</span> <span class="nb">iabs</span><span class="p">(</span><span class="n">ng0</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">-</span><span class="n">self</span><span class="p">%</span><span class="n">ngrid</span><span class="p">)</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">jnear</span><span class="p">.</span><span class="n">lt</span><span class="p">.</span><span class="n">inear</span><span class="p">)</span> <span class="k">then</span>
+<span class="k">         </span><span class="n">inear</span> <span class="o">=</span> <span class="n">jnear</span>
+         <span class="n">igrid</span> <span class="o">=</span> <span class="n">i</span>
+      <span class="k">end if</span>
+<span class="k">   end do</span>
+<span class="k">   </span><span class="n">self</span><span class="p">%</span><span class="n">ngrid</span> <span class="o">=</span> <span class="n">ng0</span><span class="p">(</span><span class="n">igrid</span><span class="p">)</span>
+
+   <span class="c">! print a nice header:</span>
+   <span class="k">call </span><span class="n">header</span><span class="p">(</span><span class="n">self</span><span class="p">)</span>
+
+   <span class="c">! allocate:</span>
+   <span class="n">self</span><span class="p">%</span><span class="n">grad</span>   <span class="o">=</span> <span class="n">self</span><span class="p">%</span><span class="n">igrad</span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="mi">0</span>
+   <span class="n">self</span><span class="p">%</span><span class="n">nylm</span>   <span class="o">=</span> <span class="p">(</span><span class="n">self</span><span class="p">%</span><span class="n">lmax</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">self</span><span class="p">%</span><span class="n">lmax</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+   <span class="k">allocate</span><span class="p">(</span><span class="n">self</span><span class="p">%</span><span class="n">rsph</span><span class="p">(</span><span class="n">self</span><span class="p">%</span><span class="n">nsph</span><span class="p">),</span> <span class="n">self</span><span class="p">%</span><span class="n">csph</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">self</span><span class="p">%</span><span class="n">nsph</span><span class="p">),</span> <span class="n">self</span><span class="p">%</span><span class="n">w</span><span class="p">(</span><span class="n">self</span><span class="p">%</span><span class="n">ngrid</span><span class="p">),</span> <span class="p">&amp;</span>
+      <span class="p">&amp;</span> <span class="n">self</span><span class="p">%</span><span class="n">grid</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">self</span><span class="p">%</span><span class="n">ngrid</span><span class="p">),</span> <span class="n">self</span><span class="p">%</span><span class="n">basis</span><span class="p">(</span><span class="n">self</span><span class="p">%</span><span class="n">nylm</span><span class="p">,</span> <span class="n">self</span><span class="p">%</span><span class="n">ngrid</span><span class="p">),</span> <span class="p">&amp;</span>
+      <span class="p">&amp;</span> <span class="n">self</span><span class="p">%</span><span class="n">inl</span><span class="p">(</span><span class="n">self</span><span class="p">%</span><span class="n">nsph</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span> <span class="n">self</span><span class="p">%</span><span class="n">nl</span><span class="p">(</span><span class="n">self</span><span class="p">%</span><span class="n">nsph</span><span class="o">*</span><span class="n">nngmax</span><span class="p">),</span> <span class="p">&amp;</span>
+      <span class="p">&amp;</span> <span class="n">self</span><span class="p">%</span><span class="n">fi</span><span class="p">(</span><span class="n">self</span><span class="p">%</span><span class="n">ngrid</span><span class="p">,</span> <span class="n">self</span><span class="p">%</span><span class="n">nsph</span><span class="p">),</span> <span class="n">self</span><span class="p">%</span><span class="n">ui</span><span class="p">(</span><span class="n">self</span><span class="p">%</span><span class="n">ngrid</span><span class="p">,</span> <span class="n">self</span><span class="p">%</span><span class="n">nsph</span><span class="p">),</span> <span class="p">&amp;</span>
+      <span class="p">&amp;</span> <span class="n">self</span><span class="p">%</span><span class="n">fact</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">self</span><span class="p">%</span><span class="n">lmax</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)),</span> <span class="n">self</span><span class="p">%</span><span class="n">facl</span><span class="p">(</span><span class="n">self</span><span class="p">%</span><span class="n">nylm</span><span class="p">),</span> <span class="p">&amp;</span>
+      <span class="p">&amp;</span> <span class="n">self</span><span class="p">%</span><span class="n">facs</span><span class="p">(</span><span class="n">self</span><span class="p">%</span><span class="n">nylm</span><span class="p">),</span> <span class="nb">stat</span><span class="o">=</span><span class="n">istatus</span><span class="p">)</span>
+   <span class="k">if</span> <span class="p">(</span><span class="n">istatus</span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="mi">0</span><span class="p">)</span> <span class="k">then</span>
+<span class="k">      write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span><span class="s1">&#39;ddinit : [1] allocation failed !&#39;</span>
+      <span class="k">stop</span>
+<span class="k">   end if</span>
+<span class="k">   if</span> <span class="p">(</span><span class="n">self</span><span class="p">%</span><span class="n">grad</span><span class="p">)</span> <span class="k">allocate</span><span class="p">(</span><span class="n">self</span><span class="p">%</span><span class="n">zi</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">self</span><span class="p">%</span><span class="n">ngrid</span><span class="p">,</span> <span class="n">self</span><span class="p">%</span><span class="n">nsph</span><span class="p">),</span> <span class="nb">stat</span><span class="o">=</span><span class="n">istatus</span><span class="p">)</span>
+   <span class="k">if</span> <span class="p">(</span><span class="n">istatus</span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="mi">0</span><span class="p">)</span> <span class="k">then</span>
+<span class="k">      write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span><span class="s1">&#39;ddinit : [1] allocation failed !&#39;</span>
+      <span class="k">stop</span>
+<span class="k">   end if</span>
+
+   <span class="c">! precompute various quantities (diagonal blocks of ddcosmo matrix,</span>
+   <span class="c">! normalization factors for spherical harmonics, factorials)</span>
+   <span class="n">self</span><span class="p">%</span><span class="n">fact</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">=</span> <span class="mf">1.0_wp</span>
+   <span class="n">self</span><span class="p">%</span><span class="n">fact</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">=</span> <span class="mf">1.0_wp</span>
+   <span class="k">do </span><span class="n">i</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">self</span><span class="p">%</span><span class="n">lmax</span> <span class="o">+</span> <span class="mi">1</span>
+      <span class="n">self</span><span class="p">%</span><span class="n">fact</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">=</span> <span class="kt">real</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">wp</span><span class="p">)</span><span class="o">*</span><span class="n">self</span><span class="p">%</span><span class="n">fact</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+   <span class="k">end do</span>
+
+<span class="k">   do </span><span class="n">l</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">self</span><span class="p">%</span><span class="n">lmax</span>
+      <span class="n">ind</span> <span class="o">=</span> <span class="n">l</span><span class="o">*</span><span class="n">l</span> <span class="o">+</span> <span class="n">l</span> <span class="o">+</span> <span class="mi">1</span>
+      <span class="n">fl</span>  <span class="o">=</span> <span class="p">(</span><span class="mf">2.0_wp</span><span class="o">*</span><span class="kt">real</span><span class="p">(</span><span class="n">l</span><span class="p">,</span> <span class="n">wp</span><span class="p">)</span> <span class="o">+</span> <span class="mf">1.0_wp</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mf">4.0_wp</span><span class="o">*</span><span class="n">pi</span><span class="p">)</span>
+      <span class="n">ffl</span> <span class="o">=</span> <span class="nb">sqrt</span><span class="p">(</span><span class="n">fl</span><span class="p">)</span>
+      <span class="n">self</span><span class="p">%</span><span class="n">facl</span><span class="p">(</span><span class="n">ind</span><span class="o">-</span><span class="n">l</span><span class="p">:</span><span class="n">ind</span><span class="o">+</span><span class="n">l</span><span class="p">)</span> <span class="o">=</span> <span class="n">fl</span>
+      <span class="n">self</span><span class="p">%</span><span class="n">facs</span><span class="p">(</span><span class="n">ind</span><span class="p">)</span> <span class="o">=</span> <span class="n">ffl</span>
+      <span class="k">do </span><span class="n">m</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">l</span>
+         <span class="n">fnorm</span> <span class="o">=</span> <span class="n">sq2</span><span class="o">*</span><span class="n">ffl</span><span class="o">*</span><span class="nb">sqrt</span><span class="p">(</span><span class="n">self</span><span class="p">%</span><span class="n">fact</span><span class="p">(</span><span class="n">l</span><span class="o">-</span><span class="n">m</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="n">self</span><span class="p">%</span><span class="n">fact</span><span class="p">(</span><span class="n">l</span><span class="o">+</span><span class="n">m</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
+         <span class="k">if</span> <span class="p">(</span><span class="nb">mod</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="mi">2</span><span class="p">).</span><span class="n">eq</span><span class="p">.</span><span class="mi">1</span><span class="p">)</span> <span class="n">fnorm</span> <span class="o">=</span> <span class="o">-</span><span class="n">fnorm</span>
+         <span class="n">self</span><span class="p">%</span><span class="n">facs</span><span class="p">(</span><span class="n">ind</span><span class="o">+</span><span class="n">m</span><span class="p">)</span> <span class="o">=</span> <span class="n">fnorm</span>
+         <span class="n">self</span><span class="p">%</span><span class="n">facs</span><span class="p">(</span><span class="n">ind</span><span class="o">-</span><span class="n">m</span><span class="p">)</span> <span class="o">=</span> <span class="n">fnorm</span>
+      <span class="k">end do</span>
+<span class="k">   end do</span>
+
+   <span class="c">! set the centers and radii of the spheres:</span>
+   <span class="n">self</span><span class="p">%</span><span class="n">csph</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="p">:)</span> <span class="o">=</span> <span class="n">x</span>
+   <span class="n">self</span><span class="p">%</span><span class="n">csph</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="p">:)</span> <span class="o">=</span> <span class="n">y</span>
+   <span class="n">self</span><span class="p">%</span><span class="n">csph</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="p">:)</span> <span class="o">=</span> <span class="n">z</span>
+   <span class="n">self</span><span class="p">%</span><span class="n">rsph</span>      <span class="o">=</span> <span class="n">rvdw</span>
+
+   <span class="c">! load a lebedev grid:</span>
+   <span class="k">call </span><span class="n">llgrid</span><span class="p">(</span><span class="n">self</span><span class="p">%</span><span class="n">ngrid</span><span class="p">,</span> <span class="n">self</span><span class="p">%</span><span class="n">w</span><span class="p">,</span> <span class="n">self</span><span class="p">%</span><span class="n">grid</span><span class="p">)</span>
+
+   <span class="c">! build a basis of spherical harmonics at the gridpoints:</span>
+   <span class="k">allocate</span> <span class="p">(</span><span class="n">vplm</span><span class="p">(</span><span class="n">self</span><span class="p">%</span><span class="n">nylm</span><span class="p">),</span> <span class="n">vcos</span><span class="p">(</span><span class="n">self</span><span class="p">%</span><span class="n">lmax</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span> <span class="n">vsin</span><span class="p">(</span><span class="n">self</span><span class="p">%</span><span class="n">lmax</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span> <span class="nb">stat</span><span class="o">=</span><span class="n">istatus</span><span class="p">)</span>
+   <span class="k">if</span> <span class="p">(</span><span class="n">istatus</span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="mi">0</span><span class="p">)</span> <span class="k">then</span>
+<span class="k">      write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span><span class="s1">&#39;ddinit : [2] allocation failed !&#39;</span>
+      <span class="k">stop</span>
+<span class="k">   end if</span>
+   <span class="c">!$omp parallel do default(shared) private(i, vplm, vcos, vsin)</span>
+   <span class="k">do </span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">self</span><span class="p">%</span><span class="n">ngrid</span>
+      <span class="k">call </span><span class="n">ylmbas</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">self</span><span class="p">%</span><span class="n">grid</span><span class="p">(:,</span> <span class="n">i</span><span class="p">),</span> <span class="n">self</span><span class="p">%</span><span class="n">basis</span><span class="p">(:,</span> <span class="n">i</span><span class="p">),</span> <span class="n">vplm</span><span class="p">,</span> <span class="n">vcos</span><span class="p">,</span> <span class="n">vsin</span><span class="p">)</span>
+   <span class="k">end do</span>
+   <span class="c">!$omp end parallel do</span>
+   <span class="k">deallocate</span> <span class="p">(</span><span class="n">vplm</span><span class="p">,</span> <span class="n">vcos</span><span class="p">,</span> <span class="n">vsin</span><span class="p">,</span> <span class="nb">stat</span><span class="o">=</span><span class="n">istatus</span><span class="p">)</span>
+   <span class="k">if</span> <span class="p">(</span><span class="n">istatus</span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="mi">0</span><span class="p">)</span> <span class="k">then</span>
+<span class="k">      write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span><span class="s1">&#39;ddinit : [1] deallocation failed!&#39;</span>
+      <span class="k">stop</span>
+<span class="k">   end if</span>
+
+<span class="k">   if</span> <span class="p">(</span><span class="n">self</span><span class="p">%</span><span class="n">iprint</span><span class="p">.</span><span class="n">ge</span><span class="p">.</span><span class="mi">4</span><span class="p">)</span> <span class="k">then</span>
+<span class="k">      call </span><span class="n">prtsph</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="s1">&#39;facs&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">self</span><span class="p">%</span><span class="n">facs</span><span class="p">)</span>
+      <span class="k">call </span><span class="n">prtsph</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="s1">&#39;facl&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">self</span><span class="p">%</span><span class="n">facl</span><span class="p">)</span>
+      <span class="k">call </span><span class="n">prtsph</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="s1">&#39;basis&#39;</span><span class="p">,</span> <span class="n">self</span><span class="p">%</span><span class="n">ngrid</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">self</span><span class="p">%</span><span class="n">basis</span><span class="p">)</span>
+      <span class="k">call </span><span class="n">ptcart</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="s1">&#39;grid&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">self</span><span class="p">%</span><span class="n">grid</span><span class="p">)</span>
+      <span class="k">call </span><span class="n">ptcart</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="s1">&#39;weights&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">self</span><span class="p">%</span><span class="n">w</span><span class="p">)</span>
+   <span class="k">end if</span>
+
+   <span class="c">! build neighbors list (CSR format)</span>
+   <span class="c">!</span>
+   <span class="c">!  \\  jsph |</span>
+   <span class="c">! isph  \\  |  1   2   3   4   5   6</span>
+   <span class="c">! -----------------------------------</span>
+   <span class="c">!         1 |      x       x   x</span>
+   <span class="c">!         2 |  x       x       x   x</span>
+   <span class="c">!         3 |      x       x       x</span>
+   <span class="c">!         4 |  x       x       x   x</span>
+   <span class="c">!         5 |  x   x       x</span>
+   <span class="c">!         6 |      x   x   x</span>
+   <span class="c">!</span>
+   <span class="c">!</span>
+   <span class="c">!  inl =  1,       4,          8,      11,         15,      18, 21        pointer to 1st neighbor</span>
+   <span class="c">!</span>
+   <span class="c">!         |        |           |        |           |        |</span>
+   <span class="c">!         v        V           V        V           V        V</span>
+   <span class="c">!</span>
+   <span class="c">!         1| 2| 3| 4| 5| 6| 7| 8| 9|10|11|12|13|14|15|16|17|18|19|20</span>
+   <span class="c">!</span>
+   <span class="c">!  nl  =  2, 4, 5, 1, 3, 5, 6, 2, 4, 6, 1, 3, 5, 6, 1, 2, 4, 2, 3, 4     neighbors list</span>
+   <span class="c">!</span>
+   <span class="c">!</span>
+   <span class="c">! index of nl</span>
+   <span class="n">ii</span>  <span class="o">=</span> <span class="mi">1</span>
+   <span class="n">lnl</span> <span class="o">=</span> <span class="mi">0</span>
+   <span class="k">do </span><span class="n">isph</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">self</span><span class="p">%</span><span class="n">nsph</span>
+      <span class="n">self</span><span class="p">%</span><span class="n">inl</span><span class="p">(</span><span class="n">isph</span><span class="p">)</span> <span class="o">=</span> <span class="n">lnl</span> <span class="o">+</span> <span class="mi">1</span>
+      <span class="k">do </span><span class="n">jsph</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">self</span><span class="p">%</span><span class="n">nsph</span>
+         <span class="k">if</span> <span class="p">(</span><span class="n">isph</span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="n">jsph</span><span class="p">)</span> <span class="k">then</span>
+<span class="k">            </span><span class="n">d2</span> <span class="o">=</span> <span class="p">(</span><span class="n">self</span><span class="p">%</span><span class="n">csph</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">isph</span><span class="p">)</span> <span class="o">-</span> <span class="n">self</span><span class="p">%</span><span class="n">csph</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">jsph</span><span class="p">))</span><span class="o">**</span><span class="mi">2</span> <span class="p">&amp;</span>
+               <span class="p">&amp;</span> <span class="o">+</span> <span class="p">(</span><span class="n">self</span><span class="p">%</span><span class="n">csph</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">isph</span><span class="p">)</span> <span class="o">-</span> <span class="n">self</span><span class="p">%</span><span class="n">csph</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">jsph</span><span class="p">))</span><span class="o">**</span><span class="mi">2</span> <span class="p">&amp;</span>
+               <span class="p">&amp;</span> <span class="o">+</span> <span class="p">(</span><span class="n">self</span><span class="p">%</span><span class="n">csph</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">isph</span><span class="p">)</span> <span class="o">-</span> <span class="n">self</span><span class="p">%</span><span class="n">csph</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">jsph</span><span class="p">))</span><span class="o">**</span><span class="mi">2</span>
+            <span class="n">r2</span> <span class="o">=</span> <span class="p">(</span><span class="n">self</span><span class="p">%</span><span class="n">rsph</span><span class="p">(</span><span class="n">isph</span><span class="p">)</span> <span class="o">+</span> <span class="n">self</span><span class="p">%</span><span class="n">rsph</span><span class="p">(</span><span class="n">jsph</span><span class="p">))</span><span class="o">**</span><span class="mi">2</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">d2</span><span class="p">.</span><span class="n">le</span><span class="p">.</span><span class="n">r2</span><span class="p">)</span> <span class="k">then</span>
+<span class="k">               </span><span class="n">self</span><span class="p">%</span><span class="n">nl</span><span class="p">(</span><span class="n">ii</span><span class="p">)</span> <span class="o">=</span> <span class="n">jsph</span>
+               <span class="n">ii</span>  <span class="o">=</span> <span class="n">ii</span> <span class="o">+</span> <span class="mi">1</span>
+               <span class="n">lnl</span> <span class="o">=</span> <span class="n">lnl</span> <span class="o">+</span> <span class="mi">1</span>
+            <span class="k">end if</span>
+<span class="k">         end if</span>
+<span class="k">      end do</span>
+<span class="k">   end do</span>
+<span class="k">   </span><span class="n">self</span><span class="p">%</span><span class="n">inl</span><span class="p">(</span><span class="n">self</span><span class="p">%</span><span class="n">nsph</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="o">=</span> <span class="n">lnl</span><span class="o">+</span><span class="mi">1</span>
+
+   <span class="k">if</span> <span class="p">(</span><span class="n">self</span><span class="p">%</span><span class="n">iprint</span><span class="p">.</span><span class="n">ge</span><span class="p">.</span><span class="mi">4</span><span class="p">)</span> <span class="k">then</span>
+<span class="k">      write</span><span class="p">(</span><span class="n">iout</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span> <span class="s1">&#39;   inl:&#39;</span>
+      <span class="k">write</span><span class="p">(</span><span class="n">iout</span><span class="p">,</span> <span class="s1">&#39;(10i6)&#39;</span><span class="p">)</span> <span class="n">self</span><span class="p">%</span><span class="n">inl</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">self</span><span class="p">%</span><span class="n">nsph</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+      <span class="k">write</span><span class="p">(</span><span class="n">iout</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span>
+      <span class="k">do </span><span class="n">isph</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">self</span><span class="p">%</span><span class="n">nsph</span>
+         <span class="k">write</span><span class="p">(</span><span class="n">iout</span><span class="p">,</span> <span class="n">f1000</span><span class="p">)</span> <span class="n">isph</span>
+         <span class="k">write</span><span class="p">(</span><span class="n">iout</span><span class="p">,</span> <span class="n">f1010</span><span class="p">)</span> <span class="n">self</span><span class="p">%</span><span class="n">nl</span><span class="p">(</span><span class="n">self</span><span class="p">%</span><span class="n">inl</span><span class="p">(</span><span class="n">isph</span><span class="p">):</span><span class="n">self</span><span class="p">%</span><span class="n">inl</span><span class="p">(</span><span class="n">isph</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+      <span class="k">end do</span>
+<span class="k">      write</span><span class="p">(</span><span class="n">iout</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span>
+   <span class="k">end if</span>
+
+   <span class="c">! Define :</span>
+   <span class="c">!</span>
+   <span class="c">!   N_i = list of neighbors of i-sphere [ excluding i-sphere ]</span>
+   <span class="c">!</span>
+   <span class="c">!            | r_i + rho_i s_n - r_j |</span>
+   <span class="c">!   t_n^ij = -------------------------</span>
+   <span class="c">!                      rho_j</span>
+   <span class="c">!</span>
+   <span class="c">!   fi(n, i) =    sum    \chi(t_n^ij)</span>
+   <span class="c">!             j \in N_i</span>
+   <span class="c">!</span>
+   <span class="c">! Notice that the derivative of fi(n, i) wrt to r_k is (possibly) nonzero</span>
+   <span class="c">! when either k = i, or k \in N_j .</span>
+
+   <span class="c">! build arrays fi, ui, zi</span>
+   <span class="n">self</span><span class="p">%</span><span class="n">fi</span> <span class="o">=</span> <span class="mf">0.0_wp</span>
+   <span class="n">self</span><span class="p">%</span><span class="n">ui</span> <span class="o">=</span> <span class="mf">0.0_wp</span>
+   <span class="k">if</span> <span class="p">(</span><span class="n">self</span><span class="p">%</span><span class="n">grad</span><span class="p">)</span> <span class="n">self</span><span class="p">%</span><span class="n">zi</span> <span class="o">=</span> <span class="mf">0.0_wp</span>
+
+   <span class="c">!$omp parallel do default(shared) &amp;</span>
+   <span class="c">!$omp private(isph, i, ii, jsph, v, vv, t, xt, swthr, fac)</span>
+   <span class="c">! loop over spheres</span>
+   <span class="k">do </span><span class="n">isph</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">self</span><span class="p">%</span><span class="n">nsph</span>
+
+      <span class="c">! loop over integration points</span>
+      <span class="k">do </span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">self</span><span class="p">%</span><span class="n">ngrid</span>
+
+         <span class="c">! loop over neighbors of i-sphere</span>
+         <span class="k">do </span><span class="n">ii</span> <span class="o">=</span> <span class="n">self</span><span class="p">%</span><span class="n">inl</span><span class="p">(</span><span class="n">isph</span><span class="p">),</span> <span class="n">self</span><span class="p">%</span><span class="n">inl</span><span class="p">(</span><span class="n">isph</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span>
+
+            <span class="c">! neighbor&#39;s number</span>
+            <span class="n">jsph</span> <span class="o">=</span> <span class="n">self</span><span class="p">%</span><span class="n">nl</span><span class="p">(</span><span class="n">ii</span><span class="p">)</span>
+
+            <span class="c">! compute t_n^ij</span>
+            <span class="n">v</span><span class="p">(:)</span> <span class="o">=</span> <span class="n">self</span><span class="p">%</span><span class="n">csph</span><span class="p">(:,</span> <span class="n">isph</span><span class="p">)</span> <span class="o">+</span> <span class="n">self</span><span class="p">%</span><span class="n">rsph</span><span class="p">(</span><span class="n">isph</span><span class="p">)</span><span class="o">*</span><span class="n">self</span><span class="p">%</span><span class="n">grid</span><span class="p">(:,</span> <span class="n">i</span><span class="p">)</span> <span class="o">-</span> <span class="n">self</span><span class="p">%</span><span class="n">csph</span><span class="p">(:,</span> <span class="n">jsph</span><span class="p">)</span>
+            <span class="n">vv</span>   <span class="o">=</span> <span class="nb">sqrt</span><span class="p">(</span><span class="nb">dot_product</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">v</span><span class="p">))</span>
+            <span class="n">t</span>    <span class="o">=</span> <span class="n">vv</span><span class="o">/</span><span class="n">self</span><span class="p">%</span><span class="n">rsph</span><span class="p">(</span><span class="n">jsph</span><span class="p">)</span>
+
+            <span class="c">! compute \chi(t_n^ij)</span>
+            <span class="n">xt</span> <span class="o">=</span> <span class="n">fsw</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">se</span><span class="p">,</span> <span class="n">self</span><span class="p">%</span><span class="n">eta</span><span class="p">)</span>
+
+            <span class="c">! upper bound of switch region</span>
+            <span class="n">swthr</span> <span class="o">=</span> <span class="mf">1.0_wp</span> <span class="o">+</span> <span class="p">(</span><span class="n">se</span> <span class="o">+</span> <span class="mf">1._wp</span><span class="p">)</span><span class="o">*</span><span class="n">self</span><span class="p">%</span><span class="n">eta</span> <span class="o">/</span> <span class="mf">2._wp</span>
+
+            <span class="c">! t_n^ij belongs to switch region</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">self</span><span class="p">%</span><span class="n">grad</span> <span class="p">.</span><span class="nb">and</span><span class="p">.</span> <span class="p">(</span><span class="n">t</span><span class="p">.</span><span class="n">lt</span><span class="p">.</span><span class="n">swthr</span> <span class="p">.</span><span class="nb">and</span><span class="p">.</span> <span class="n">t</span><span class="p">.</span><span class="n">gt</span><span class="p">.</span><span class="n">swthr</span><span class="o">-</span><span class="n">self</span><span class="p">%</span><span class="n">eta</span><span class="p">))</span> <span class="k">then</span>
+
+<span class="k">               </span><span class="n">fac</span> <span class="o">=</span> <span class="n">dfsw</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">se</span><span class="p">,</span> <span class="n">self</span><span class="p">%</span><span class="n">eta</span><span class="p">)</span> <span class="o">/</span> <span class="n">self</span><span class="p">%</span><span class="n">rsph</span><span class="p">(</span><span class="n">jsph</span><span class="p">)</span>
+
+               <span class="c">! accumulate for zi</span>
+
+               <span class="n">self</span><span class="p">%</span><span class="n">zi</span><span class="p">(:,</span> <span class="n">i</span><span class="p">,</span> <span class="n">isph</span><span class="p">)</span> <span class="o">=</span> <span class="n">self</span><span class="p">%</span><span class="n">zi</span><span class="p">(:,</span> <span class="n">i</span><span class="p">,</span> <span class="n">isph</span><span class="p">)</span> <span class="o">+</span> <span class="n">fac</span><span class="o">*</span><span class="n">v</span><span class="p">(:)</span><span class="o">/</span><span class="n">vv</span>
+
+            <span class="k">end if</span>
+
+            <span class="c">! accumulate for fi</span>
+
+            <span class="n">self</span><span class="p">%</span><span class="n">fi</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">isph</span><span class="p">)</span> <span class="o">=</span> <span class="n">self</span><span class="p">%</span><span class="n">fi</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">isph</span><span class="p">)</span> <span class="o">+</span> <span class="n">xt</span>
+
+         <span class="k">end do</span>
+
+         <span class="c">! compute ui</span>
+
+         <span class="k">if</span> <span class="p">(</span><span class="n">self</span><span class="p">%</span><span class="n">fi</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">isph</span><span class="p">).</span><span class="n">le</span><span class="p">.</span><span class="mf">1.0_wp</span><span class="p">)</span>  <span class="n">self</span><span class="p">%</span><span class="n">ui</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">isph</span><span class="p">)</span> <span class="o">=</span> <span class="mf">1.0_wp</span> <span class="o">-</span> <span class="n">self</span><span class="p">%</span><span class="n">fi</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">isph</span><span class="p">)</span>
+
+      <span class="k">end do</span>
+<span class="k">   end do</span>
+   <span class="c">!$omp end parallel do</span>
+
+   <span class="k">if</span> <span class="p">(</span><span class="n">self</span><span class="p">%</span><span class="n">iprint</span><span class="p">.</span><span class="n">ge</span><span class="p">.</span><span class="mi">4</span><span class="p">)</span> <span class="k">then</span>
+<span class="k">      call </span><span class="n">ptcart</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="s1">&#39;fi&#39;</span><span class="p">,</span> <span class="n">self</span><span class="p">%</span><span class="n">nsph</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">self</span><span class="p">%</span><span class="n">fi</span><span class="p">)</span>
+      <span class="k">call </span><span class="n">ptcart</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="s1">&#39;ui&#39;</span><span class="p">,</span> <span class="n">self</span><span class="p">%</span><span class="n">nsph</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">self</span><span class="p">%</span><span class="n">ui</span><span class="p">)</span>
+   <span class="k">end if</span>
+
+   <span class="c">! build cavity array</span>
+
+
+   <span class="c">! initialize number of cavity points</span>
+   <span class="n">self</span><span class="p">%</span><span class="n">ncav</span><span class="o">=</span><span class="mi">0</span>
+
+   <span class="c">! loop over spheres</span>
+   <span class="k">do </span><span class="n">isph</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">self</span><span class="p">%</span><span class="n">nsph</span>
+
+      <span class="c">! loop over integration points</span>
+      <span class="k">do </span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">self</span><span class="p">%</span><span class="n">ngrid</span>
+
+         <span class="c">! positive contribution from integration point</span>
+         <span class="k">if</span> <span class="p">(</span><span class="n">self</span><span class="p">%</span><span class="n">ui</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">isph</span><span class="p">).</span><span class="n">gt</span><span class="p">.</span><span class="mf">0.0_wp</span><span class="p">)</span> <span class="k">then</span>
+
+            <span class="c">! accumulate</span>
+            <span class="n">self</span><span class="p">%</span><span class="n">ncav</span> <span class="o">=</span> <span class="n">self</span><span class="p">%</span><span class="n">ncav</span> <span class="o">+</span> <span class="mi">1</span>
+
+         <span class="k">end if</span>
+<span class="k">      end do</span>
+<span class="k">   end do</span>
+
+   <span class="c">! allocate cavity array</span>
+   <span class="k">allocate</span><span class="p">(</span><span class="n">self</span><span class="p">%</span><span class="n">ccav</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">self</span><span class="p">%</span><span class="n">ncav</span><span class="p">),</span> <span class="nb">stat</span><span class="o">=</span><span class="n">istatus</span><span class="p">)</span>
+   <span class="k">if</span> <span class="p">(</span><span class="n">istatus</span> <span class="p">.</span><span class="n">ne</span><span class="p">.</span> <span class="mi">0</span><span class="p">)</span> <span class="k">then</span>
+<span class="k">      write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span><span class="s1">&#39;ddinit : [3] allocation failed!&#39;</span>
+      <span class="k">stop</span>
+<span class="k">   end if</span>
+
+
+   <span class="c">! initialize cavity array index</span>
+   <span class="n">ii</span> <span class="o">=</span> <span class="mi">0</span>
+
+   <span class="c">! loop over spheres</span>
+   <span class="k">do </span><span class="n">isph</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">self</span><span class="p">%</span><span class="n">nsph</span>
+
+      <span class="c">! loop over integration points</span>
+      <span class="k">do </span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">self</span><span class="p">%</span><span class="n">ngrid</span>
+
+         <span class="c">! positive contribution from integration point</span>
+         <span class="k">if</span> <span class="p">(</span><span class="n">self</span><span class="p">%</span><span class="n">ui</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">isph</span><span class="p">).</span><span class="n">gt</span><span class="p">.</span><span class="mf">0.0_wp</span><span class="p">)</span> <span class="k">then</span>
+
+            <span class="c">! advance cavity array index</span>
+            <span class="n">ii</span> <span class="o">=</span> <span class="n">ii</span> <span class="o">+</span> <span class="mi">1</span>
+
+            <span class="c">! store point</span>
+            <span class="n">self</span><span class="p">%</span><span class="n">ccav</span><span class="p">(:,</span> <span class="n">ii</span><span class="p">)</span> <span class="o">=</span> <span class="n">self</span><span class="p">%</span><span class="n">csph</span><span class="p">(:,</span> <span class="n">isph</span><span class="p">)</span> <span class="o">+</span> <span class="n">self</span><span class="p">%</span><span class="n">rsph</span><span class="p">(</span><span class="n">isph</span><span class="p">)</span><span class="o">*</span><span class="n">self</span><span class="p">%</span><span class="n">grid</span><span class="p">(:,</span> <span class="n">i</span><span class="p">)</span>
+
+         <span class="k">end if</span>
+<span class="k">      end do</span>
+<span class="k">   end do</span>
+
+<span class="k">   if</span> <span class="p">(</span><span class="n">self</span><span class="p">%</span><span class="n">iprint</span><span class="p">.</span><span class="n">ge</span><span class="p">.</span><span class="mi">4</span><span class="p">)</span> <span class="k">then</span>
+<span class="k">      write</span><span class="p">(</span><span class="n">iout</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span> <span class="s1">&#39;   external cavity points:&#39;</span>
+      <span class="k">do </span><span class="n">ii</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">self</span><span class="p">%</span><span class="n">ncav</span>
+         <span class="k">write</span><span class="p">(</span><span class="n">iout</span><span class="p">,</span> <span class="n">f1100</span><span class="p">)</span> <span class="n">ii</span><span class="p">,</span> <span class="n">self</span><span class="p">%</span><span class="n">ccav</span><span class="p">(:,</span> <span class="n">ii</span><span class="p">)</span>
+      <span class="k">end do</span>
+<span class="k">      write</span><span class="p">(</span><span class="n">iout</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span>
+   <span class="k">end if</span>
+
+<span class="k">end subroutine </span><span class="n">ddinit</span>
+</pre></div>
+
+    </section>
+    <br>
+    
+    
+    </div>
+  </div>
+
+
+    <hr>    
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+      <div class="row">
+        <div class="col-xs-6 col-md-4"><p>&copy; 2021 
+                                          </p></div>
+        <div class="col-xs-6 col-md-4 col-md-push-4">
+          <p class="text-right">
+            Documentation generated by 
+            <a href="https://github.com/cmacmackin/ford">FORD</a>
+             on 2021-01-29 11:19  
+          </p>
+        </div>
+        <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> ddCOSMO was developed by </p></div>
+      </div>
+      <br>
+      </div> <!-- /container -->    
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+<!--
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+-->
+    <script src="../js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../js/ie10-viewport-bug-workaround.js"></script>
+
+    <!-- MathJax JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+        jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+        extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+      });
+    </script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    
+    <script src="../tipuesearch/tipuesearch_content.js"></script>
+    <script src="../tipuesearch/tipuesearch_set.js"></script>
+    <script src="../tipuesearch/tipuesearch.js"></script>
+    
+    
+  </body>
+</html>
