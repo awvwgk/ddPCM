@@ -1,15 +1,15 @@
 subroutine efld(nsrc,src,csrc,ntrg,ctrg,ef)
 implicit none
-! 
-!      888      888  .d8888b.   .d88888b.   .d8888b.  888b     d888  .d88888b.  
-!      888      888 d88P  Y88b d88P" "Y88b d88P  Y88b 8888b   d8888 d88P" "Y88b 
-!      888      888 888    888 888     888 Y88b.      88888b.d88888 888     888 
-!  .d88888  .d88888 888        888     888  "Y888b.   888Y88888P888 888     888 
-! d88" 888 d88" 888 888        888     888     "Y88b. 888 Y888P 888 888     888 
-! 888  888 888  888 888    888 888     888       "888 888  Y8P  888 888     888 
-! Y88b 888 Y88b 888 Y88b  d88P Y88b. .d88P Y88b  d88P 888   "   888 Y88b. .d88P 
-!  "Y88888  "Y88888  "Y8888P"   "Y88888P"   "Y8888P"  888       888  "Y88888P"  
-!                                                                              
+!
+!      888      888  .d8888b.   .d88888b.   .d8888b.  888b     d888  .d88888b.
+!      888      888 d88P  Y88b d88P" "Y88b d88P  Y88b 8888b   d8888 d88P" "Y88b
+!      888      888 888    888 888     888 Y88b.      88888b.d88888 888     888
+!  .d88888  .d88888 888        888     888  "Y888b.   888Y88888P888 888     888
+! d88" 888 d88" 888 888        888     888     "Y88b. 888 Y888P 888 888     888
+! 888  888 888  888 888    888 888     888       "888 888  Y8P  888 888     888
+! Y88b 888 Y88b 888 Y88b  d88P Y88b. .d88P Y88b  d88P 888   "   888 Y88b. .d88P
+!  "Y88888  "Y88888  "Y8888P"   "Y88888P"   "Y8888P"  888       888  "Y88888P"
+!
 !
 !                             ALL RIGHT RESERVED.                              !
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -22,10 +22,10 @@ implicit none
 ! A modular implementation of COSMO using a domain decomposition linear scaling
 ! strategy.
 !
-! This code is governed by the LGPL license and abiding by the rules of 
+! This code is governed by the LGPL license and abiding by the rules of
 ! distribution of free software.
-! This program is distributed in the hope that it will be useful, but  
-! WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY 
+! This program is distributed in the hope that it will be useful, but
+! WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
 ! or FITNESS FOR A PARTICULAR PURPOSE.
 ! See the GNU Lesser General Public License for more details.
 !
@@ -37,7 +37,7 @@ implicit none
 !     J. Chem. Phys. 139, 054111 (2013)
 !
 ! [2] F. Lipparini, B. Stamm, E. Cancès, Y. Maday, B. Mennucci
-!     "Fast Domain Decomposition Algorithm for Continuum Solvation Models: 
+!     "Fast Domain Decomposition Algorithm for Continuum Solvation Models:
 !      Energy and First Derivatives"
 !     J. Chem. Theory Comput. 9, 3637–3648 (2013)
 !
@@ -47,14 +47,14 @@ implicit none
 !
 ! [3] F. Lipparini, G. Scalmani, L. Lagardère, B. Stamm, E. Cancès, Y. Maday,
 !     J.-P. Piquemal, M. J. Frisch, B. Mennucci
-!     "Quantum, classical, and hybrid QM/MM calculations in solution: General 
+!     "Quantum, classical, and hybrid QM/MM calculations in solution: General
 !      implementation of the ddCOSMO linear scaling strategy"
 !     J. Chem. Phys. 141, 184108 (2014)
 !     (for quantum mechanical models)
 !
 ! [4] F. Lipparini, L. Lagardère, G. Scalmani, B. Stamm, E. Cancès, Y. Maday,
 !     J.-P. Piquemal, M. J. Frisch, B. Mennucci
-!     "Quantum Calculations in Solution for Large to Very Large Molecules: 
+!     "Quantum Calculations in Solution for Large to Very Large Molecules:
 !      A New Linear Scaling QM/Continuum Approach"
 !     J. Phys. Chem. Lett. 5, 953-958 (2014)
 !     (for semiempirical models)
@@ -64,7 +64,7 @@ implicit none
 !     "Polarizable Molecular Dynamics in a Polarizable Continuum Solvent"
 !     J. Chem. Theory Comput. 11, 623-634 (2015)
 !     (for classical models, including polarizable force fields
-!     
+!
 ! The users of this code should also include the appropriate reference to the
 ! COSMO model. This distribution includes the routines to generate lebedev
 ! grids by D. Laikov and C. van Wuellen, as publicly available on CCL. If the routines
